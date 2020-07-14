@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tianmao.css">
+</head>
+
+<body>
+    <div class="grid1">
+        <div class="grid1_bg">
+            <div class="grid1_head">
+                <div class="grid1_text" id="day" style="background-color: #00B262;">
+                    今日疯抢
+                </div>
+                <div class="grid1_text" id="less">
+                    量贩装
+                </div>
+            </div>
+            <div class="grid1_img" id="eat">
+                <a href="#">
+                    <img src="img/dayjianguo.jpg">
+                </a>
+                <div class="onedisplay">
+                    <div class="textlist">
+                        <img src="https://img.alicdn.com/tfs/TB12RqQewMPMeJjy1XdXXasrXXa-23-23.png" alt="">
+                        <span>零食欢乐购</span>
+                        <div>
+                            <span class="textlist2">爆款直降</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="grid1_img" id="oil" style="display: none;">
+                <a href="#">
+                    <img src="img/caiziyou.jpg">
+                </a>
+                <div class="onedisplay">
+                    <div class="textlist">
+                        <img src="https://img.alicdn.com/tfs/TB12RqQewMPMeJjy1XdXXasrXXa-23-23.png" alt="">
+                        <span>爆款直降</span>
+                        <div>
+                            <span class="textlist2">粮油调味</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // var day = document.getElementById("day");
+        // var less = document.getElementById("less");
+        // var eat = document.getElementById("eat");
+        // var oil = document.getElementById("oil");
+        // console.log(day);
+        // console.log(less);
+        // console.log(eat);
+        // console.log(oil);
+
+        // day.onclick = function () {
+        //     oil.style.display = "none";
+        //     eat.style.display = "block";
+        //     this.style.background = "#00B262";
+        //     less.style.background = "rgb(241,241,241)";
+        // }
+        // less.onclick = function () {
+        //     eat.style.display = "none";
+        //     oil.style.display = "block";
+        //     this.style.background = "#00B262";
+        //     day.style.background = "rgb(241,241,241)";
+        // }
+
+        //var y = true;
+        // setInterval(function () {
+        //     if (y) {
+        //         oil.style.display = "none";
+        //         eat.style.display = "block";
+        //         day.style.background = "#00B262";
+        //         less.style.background = "rgb(241,241,241)";
+
+        //         y = false;
+        //     } else {
+        //         eat.style.display = "none";
+        //         oil.style.display = "block";
+        //         less.style.background = "#00B262";
+        //         day.style.background = "rgb(241,241,241)";
+        //         y=true;
+        //     }
+        // }, 1000);
+
+
+
+
+        var title = document.querySelectorAll(".grid1_text");
+        var shops = document.querySelectorAll(".grid1_img");
+        console.log(title);
+        console.log(shops);
+
+        for (let i = 0; i < title.length; i++) {
+            title[i].onclick = function () {
+                for (var j = 0; j < title.length; j++) {
+                    title[j].style.background = 'rgb(241,241,241)';
+                    shops[j].style.display = "none";
+                }
+                title[i].style.background = "#00B262";
+                shops[i].style.display = "block";
+            }
+        }
+
+        var y = 0;
+        setInterval(() => {
+            if (y) {
+                title[0].style.background = "#00B262";
+                shops[0].style.display = "block";
+                title[1].style.background = 'rgb(241,241,241)';
+                shops[1].style.display = "none";
+                y = false;
+            } else {
+                title[1].style.background = "#00B262";
+                shops[1].style.display = "block";
+                title[0].style.background = 'rgb(241,241,241)';
+                shops[0].style.display = "none";
+                y = true
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
